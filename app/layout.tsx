@@ -14,14 +14,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <NextUIProvider>
-        <body className={inter.className}>
-          <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            <Navbar></Navbar>
+      <body className={inter.className}>
+        <Navbar></Navbar>
+        <main className="flex min-h-screen flex-col items-center justify-between p-24 max-w-l">
+          <NextUIProvider>
             <div className="container">{children}</div>
-          </main>
-        </body>
-      </NextUIProvider>
+          </NextUIProvider>
+        </main>
+      </body>
     </html>
   );
 }

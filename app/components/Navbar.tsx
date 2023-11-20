@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <>
       {/* <div className="grid text-center lg:max-w-l lg:w-full lg:mb-0 lg:grid-cols-5 lg:text-left"> */}
-      <div className="grid grid-flow-col gap-4  mx-auto mt-6 md:mt-0 auto-cols-auto md:auto-rows-auto md:gap-8 lg:gap-12">
+      <nav className="grid grid-flow-col gap-4 mx-auto mt-6 md:mt-0 auto-cols-auto md:auto-rows-auto md:gap-8 lg:gap-12">
         <Link
           href="/home"
           className="group rounded-lg border border-transparent text-center py-4 transition-colors"
@@ -63,7 +63,7 @@ const Navbar = () => {
             </span>
           </button>
         </Link>
-      </div>
+      </nav>
     </>
   );
 };
