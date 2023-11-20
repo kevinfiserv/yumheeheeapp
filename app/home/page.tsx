@@ -8,7 +8,7 @@ import {
   Button,
 } from "@nextui-org/react";
 
-import getTestUsers from "@/pages/api";
+import { getTestUsers } from "@/pages/api";
 
 const Home = async () => {
   const users = await getTestUsers();
@@ -27,9 +27,9 @@ const Home = async () => {
       <div className="text-3xl text-left grid py-1 bg-clip-border rounded-xl">
         <div>Active Status: Currently Part time</div>
       </div>
-      <div className="mt-3 text-3xl pl-12 grid bg-stone-500 py-5 bg-clip-border rounded-xl">
+      <div className="mt-3 text-3xl pl-5 pr-5 grid bg-stone-500 py-5 bg-clip-border rounded-xl">
         <div className="mt-12 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-          <div className="text-left relative flex w-40 flex-col rounded-xl">
+          <div className="text-left relative flex w-35 flex-col rounded-xl">
             New Order
           </div>
         </div>
@@ -38,7 +38,7 @@ const Home = async () => {
           {users.map((user) => (
             <div
               key={user.id}
-              className="relative flex w-80 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
+              className="relative flex w-50 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
             >
               <div className="p-6">
                 <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
