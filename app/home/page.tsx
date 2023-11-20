@@ -8,21 +8,23 @@ import {
   Button,
 } from "@nextui-org/react";
 
-import { getTestUsers } from "@/pages/api";
+import { EmployeeApi, ProductApi } from "@/pages/api";
 
 const Home = async () => {
-  const users = await getTestUsers();
+  const products = await ProductApi.getAllProducts();
+  const employees = await EmployeeApi.getAllEmployees();
+  const myEmployee = await EmployeeApi.findEmployee(3);
 
   return (
     <>
       <div className="mt-12 text-3xl text-center grid py-10 bg-clip-border rounded-xl">
-        <div>Welcome Employee {users[3].name}!</div>
+        <div>Welcome Employee {myEmployee.name}!</div>
       </div>
       <div className="text-3xl text-left grid py-1 bg-clip-border rounded-xl">
-        <div>Employee ID: {users[3].id}</div>
+        <div>Employee ID: {myEmployee.employeeId}</div>
       </div>
       <div className="text-3xl text-left grid py-1 bg-clip-border rounded-xl">
-        <div>Full Name: {users[3].name}</div>
+        <div>Active Status: {myEmployee.activeStatus}</div>
       </div>
       <div className="text-3xl text-left grid py-1 bg-clip-border rounded-xl">
         <div>Active Status: Currently Part time</div>
@@ -35,17 +37,17 @@ const Home = async () => {
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-          {users.map((user) => (
+          {products.map((product) => (
             <div
-              key={user.id}
+              key={product.product_id}
               className="relative flex w-50 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
             >
               <div className="p-6">
                 <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
-                  {user.name}
+                  {product.name}
                 </h5>
                 <p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
-                  {user.email}
+                  {product.price}
                 </p>
               </div>
               <div className="p-6 pt-0">
