@@ -32,9 +32,9 @@ interface Employee {
 }
 
 interface OrderDetails {
-  order_number: number;
-  customer_order: string;
-  total_price: number;
+  orderNumber: number;
+  customerOrder: string;
+  totalPrice: number;
   time: Date;
 }
 
