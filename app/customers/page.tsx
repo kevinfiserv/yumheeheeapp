@@ -24,7 +24,7 @@ const Customers = async () => {
                   Address
                 </th>
                 <th className="tremor-TableHeaderCell-root sticky whitespace-nowrap text-left font-semibold text-tremor-content dark:text-dark-tremor-content top-0 px-4 py-3.5">
-                  Zip COde
+                  Zip Code
                 </th>
               </tr>
             </thead>

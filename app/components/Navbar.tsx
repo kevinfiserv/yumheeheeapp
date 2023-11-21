@@ -24,7 +24,7 @@ const NavigationBar: React.FC = () => {
       </Link>
 
       <Link
-          href="/"
+          href="/products"
           className="group rounded-lg border border-transparent text-center py-0.3 transition-colors"
           rel="noopener noreferrer"
         >
@@ -32,7 +32,7 @@ const NavigationBar: React.FC = () => {
       </Link>
 
       <Link
-          href="/"
+          href="/customers"
           className="group rounded-lg border border-transparent text-center py-0.3 transition-colors"
           rel="noopener noreferrer"
         >
@@ -40,7 +40,7 @@ const NavigationBar: React.FC = () => {
       </Link>
 
       <Link
-          href="/"
+          href="/admin"
           className="group rounded-lg border border-transparent text-center py-0.3 transition-colors"
           rel="noopener noreferrer"
         >
