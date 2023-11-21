@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 
 const DATA_SOURCE_URL = "https://jsonplaceholder.typicode.com/todos";
 
+const BACKEND_API = "http://localhost:3000/api";
+
 interface User {
   id: number;
   name: string;
@@ -57,26 +59,26 @@ export async function getTestUsers() {
 
 export class ProductApi {
   static async getAllProducts() {
-    const res = await fetch("http://localhost:3000/api/products");
+    const res = await fetch(`${BACKEND_API}/products`);
     const Products: Product[] = await res.json();
     return Products;
   }
   static async findProduct(id: number) {
-    const res = await fetch(`http://localhost:3000/api/product/${id}`);
-    const Products: Product[] = await res.json();
-    return Products;
+    const res = await fetch(`${BACKEND_API}/product/${id}`);
+    const Product: Product = await res.json();
+    return Product;
   }
 }
 
 export class EmployeeApi {
   static async getAllEmployees() {
-    const res = await fetch("http://localhost:3000/api/employee");
+    const res = await fetch(`${BACKEND_API}/employee`);
     const Employees: Employee[] = await res.json();
     return Employees;
   }
 
   static async findEmployee(id: number) {
-    const res = await fetch(`http://localhost:3000/api/getEmployee/${id}`);
+    const res = await fetch(`${BACKEND_API}/getEmployee/${id}`);
     const Employee: Employee = await res.json();
     return Employee;
   }
@@ -84,30 +86,55 @@ export class EmployeeApi {
 
 export class OrderListApi {
   static async getAllOrderLists() {
-    const res = await fetch("http://localhost:3000/api/orderList");
+    const res = await fetch(`${BACKEND_API}/orderList`);
     const OrderList: OrderList[] = await res.json();
     return OrderList;
   }
 
   static async findOrderList(id: number) {
-    const res = await fetch(`http://localhost:3000/api/getOrderList/${id}`);
-    const OrderList: OrderList[] = await res.json();
+    const res = await fetch(`${BACKEND_API}/getOrderList/${id}`);
+    const OrderList: OrderList = await res.json();
     return OrderList;
   }
 }
+export class OrderDetailApi {
+  static async getAllOrderDetails() {
+    const res = await fetch(`${BACKEND_API}/orderDetail`);
+    const OrderDetails: OrderDetails[] = await res.json();
+    return OrderDetails;
+  }
 
+  static async findOrderDetails(id: number) {
+    const res = await fetch(`${BACKEND_API}/getOrderDetail/${id}`);
+    const OrderDetails: OrderDetails = await res.json();
+    return OrderDetails;
+  }
+}
 
 export class CustomerApi {
   static async getAllCustomers() {
-    const res = await fetch("http://localhost:3000/api/customers");
+    const res = await fetch(`${BACKEND_API}/customers`);
     const Customers: Customers[] = await res.json();
     return Customers;
   }
-  
+
   static async findCustomer(id: number) {
-    const res = await fetch(`http://localhost:3000/api/getCustomer/${id}`);
-    const Customers: Customers[] = await res.json();
+    const res = await fetch(`${BACKEND_API}/getCustomer/${id}`);
+    const Customers: Customers = await res.json();
     return Customers;
+  }
+}
+export class CustomerOrderApi {
+  static async getAllCustomerOrders() {
+    const res = await fetch(`${BACKEND_API}/customerOrder`);
+    const CustomerOrders: CustomerOrders[] = await res.json();
+    return CustomerOrders;
+  }
+
+  static async findCustomerOrder(id: number) {
+    const res = await fetch(`${BACKEND_API}/getCustomerOrder/${id}`);
+    const CustomerOrders: CustomerOrders = await res.json();
+    return CustomerOrders;
   }
 }
 
