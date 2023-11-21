@@ -46,7 +46,7 @@ interface OrderList {
 }
 
 interface Product {
-  product_id: number;
+  productId: number;
   name: string;
   price: number;
 }
