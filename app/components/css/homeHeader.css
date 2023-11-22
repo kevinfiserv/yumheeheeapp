@@ -32,8 +32,6 @@
 #img {
   width: 70px;
   height: 70px;
-  /* transform: scale(100%); */
-  /* background-image:url(person.png); */
   border-radius: 100%;
   margin: auto;
   margin-top: 20px;

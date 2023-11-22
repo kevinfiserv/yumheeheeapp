@@ -1,6 +1,5 @@
 import React, { use } from "react";
 import "../components/css/homeHeader.css"
-import thumbnail from "image.jpg";
 
 import {
   Card,
@@ -23,8 +22,6 @@ const Home = async () => {
     <>
       <div className="mt-5 text-3xl text-center grid bg-clip-border rounded-xl">
         <div>Welcome!</div>
-        
-        {/* <img src = "https://pixabay.com/vectors/avatar-icon-placeholder-facebook-1293744/"/> */}
         </div>
       <div className ="card">
         <div className="card-border-top">
