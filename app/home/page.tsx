@@ -1,5 +1,5 @@
 import React, { use } from "react";
-import "../components/css/homeHeader.css"
+import "../components/css/homeHeader.css";
 
 import {
   Card,
@@ -22,15 +22,14 @@ const Home = async () => {
     <>
       <div className="mt-5 text-3xl text-center grid bg-clip-border rounded-xl">
         <div>Welcome!</div>
-        </div>
-      <div className ="card">
-        <div className="card-border-top">
-        </div>
+      </div>
+      <div className="card">
+        <div className="card-border-top"></div>
         <span> {myEmployee.name}</span>
         <p className="job"> Employee ID: {myEmployee.employeeId} </p>
         <p className="job"> Active Status: {myEmployee.activeStatus} </p>
       </div>
-    
+
       <div className="mt-10 text-3xl pl-5 pr-5 grid bg-white py-5 bg-clip-border rounded-xl">
         <div className="mt-12 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
           <div className="text-left relative flex w-35 flex-col rounded-xl">
@@ -41,7 +40,7 @@ const Home = async () => {
         <div className="mt-12 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
           {products.map((product) => (
             <div
-              key={product.product_id}
+              key={product.productId}
               className="relative flex w-50 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
             >
               <div className="p-6">
@@ -49,7 +48,7 @@ const Home = async () => {
                   {product.name}
                 </h5>
                 <p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
-                  {product.price}
+                  {Number(product.price).toFixed(2)}
                 </p>
               </div>
               <div className="p-6 pt-0">

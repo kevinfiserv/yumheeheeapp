@@ -3,7 +3,7 @@ import React from "react";
 import { ProductApi } from "@/pages/api";
 
 const Products = async () => {
-    const products = await ProductApi.getAllProducts();
+  const products = await ProductApi.getAllProducts();
 
   return (
     <>
@@ -21,9 +21,7 @@ const Products = async () => {
                 <th className="tremor-TableHeaderCell-root sticky whitespace-nowrap text-left font-semibold text-tremor-content dark:text-dark-tremor-content top-0 px-4 py-3.5">
                   Name
                 </th>
-                <th className="tremor-TableHeaderCell-root sticky whitespace-nowrap text-left font-semibold text-tremor-content dark:text-dark-tremor-content top-0 px-4 py-3.5">
-                  Quantity
-                </th>
+
                 <th className="tremor-TableHeaderCell-root sticky whitespace-nowrap text-left font-semibold text-tremor-content dark:text-dark-tremor-content top-0 px-4 py-3.5">
                   Price
                 </th>
@@ -38,12 +36,10 @@ const Products = async () => {
                   <td className="tremor-TableCell-root align-middle whitespace-nowrap tabular-nums text-left p-4">
                     {product.name}
                   </td>
-                  <td className="tremor-TableCell-root align-middle whitespace-nowrap tabular-nums text-left p-4">
-                    423
-                  </td>
+
                   <td className="tremor-TableCell-root align-middle whitespace-nowrap tabular-nums text-left p-4">
                     {/* show two decimal places */}
-                    {Number(product.price).toFixed(2)} 
+                    {Number(product.price).toFixed(2)}
                   </td>
                 </tr>
               ))}

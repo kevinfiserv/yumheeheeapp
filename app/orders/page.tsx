@@ -69,7 +69,7 @@ const Orders = async () => {
             <table className="tremor-Table-table w-full tabular-nums text-tremor-default text-tremor-content dark:text-dark-tremor-content">
               <tr className="tremor-TableRow-row">
                 <td className="tremor-TableCell-root align-middle whitespace-nowrap tabular-nums text-left p-4">
-                  Time Completed {orderDetail.time}
+                  Time Completed: {new Date(orderDetail.time).toUTCString()}
                 </td>
                 <td className="tremor-TableCell-root align-middle whitespace-nowrap tabular-nums text-left p-4"></td>
                 <td className="tremor-TableCell-root align-middle whitespace-nowrap tabular-nums text-left p-4">
