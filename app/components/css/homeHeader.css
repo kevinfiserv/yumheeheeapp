@@ -1,0 +1,40 @@
+.card {
+  width: 290px;
+  height: 125px;
+  background-image: linear-gradient(144deg, #3B82F6, orange, #3B82F6);
+  border: none;
+  border-radius: 10px;
+  padding-top: 10px;
+  position: relative;
+  transform: translateY(5%); 
+  margin: auto;
+  font-family: inherit;
+}
+ 
+.card span {
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  display: block;
+  padding-top: 10px;
+  font-size: 1.3em;
+}
+ 
+.card .job {
+  font-weight: 400;
+  color: white;
+  display: block;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 1em;
+}
+ 
+#img {
+  width: 70px;
+  height: 70px;
+  /* transform: scale(100%); */
+  /* background-image:url(person.png); */
+  border-radius: 100%;
+  margin: auto;
+  margin-top: 20px;
+}

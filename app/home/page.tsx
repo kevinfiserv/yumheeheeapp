@@ -1,4 +1,7 @@
 import React, { use } from "react";
+import "../components/css/homeHeader.css"
+import thumbnail from "image.jpg";
+
 import {
   Card,
   CardFooter,
@@ -9,6 +12,7 @@ import {
 } from "@nextui-org/react";
 
 import { EmployeeApi, ProductApi } from "@/pages/api";
+import { url } from "inspector";
 
 const Home = async () => {
   const products = await ProductApi.getAllProducts();
@@ -17,19 +21,20 @@ const Home = async () => {
 
   return (
     <>
-      <div className="mt-12 text-3xl text-center grid py-10 bg-clip-border rounded-xl">
-        <div>Welcome Employee {myEmployee.name}!</div>
+      <div className="mt-5 text-3xl text-center grid bg-clip-border rounded-xl">
+        <div>Welcome!</div>
+        
+        {/* <img src = "https://pixabay.com/vectors/avatar-icon-placeholder-facebook-1293744/"/> */}
+        </div>
+      <div className ="card">
+        <div className="card-border-top">
+        </div>
+        <span> {myEmployee.name}</span>
+        <p className="job"> Employee ID: {myEmployee.employeeId} </p>
+        <p className="job"> Active Status: {myEmployee.activeStatus} </p>
       </div>
-      <div className="text-3xl text-left grid py-1 bg-clip-border rounded-xl">
-        <div>Employee ID: {myEmployee.employeeId}</div>
-      </div>
-      <div className="text-3xl text-left grid py-1 bg-clip-border rounded-xl">
-        <div>Active Status: {myEmployee.activeStatus}</div>
-      </div>
-      <div className="text-3xl text-left grid py-1 bg-clip-border rounded-xl">
-        <div>Active Status: Currently Part time</div>
-      </div>
-      <div className="mt-3 text-3xl pl-5 pr-5 grid bg-stone-500 py-5 bg-clip-border rounded-xl">
+    
+      <div className="mt-10 text-3xl pl-5 pr-5 grid bg-white py-5 bg-clip-border rounded-xl">
         <div className="mt-12 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
           <div className="text-left relative flex w-35 flex-col rounded-xl">
             New Order
