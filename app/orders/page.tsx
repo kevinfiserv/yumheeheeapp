@@ -12,15 +12,15 @@ const Orders = async () => {
       {orderDetails.map((orderDetail) => (
         <>
           <div className="mt-3 text-3xl pl-5 pr-5 grid py-5 bg-clip-border rounded-xl">
-            _______________________________
+            _________________________________
           </div>
           <div
             key={orderDetail.orderNumber}
-            className="mt-3 text-3xl pl-5 pr-5 grid bg-stone-500 py-5 bg-clip-border rounded-xl"
+            className="mt-3 text-3xl pl-5 pr-5 ring-1 ring-black grid bg-orange-500 py-5 bg-clip-border rounded-xl"
           >
-            Shopping cart: Order Number {orderDetail.orderNumber}
+            <b>Order Number #{orderDetail.orderNumber}</b>
           </div>
-          <div className="bg-gray-300 text-cyan-950 tremor-Card-root relative w-full text-left ring-1 rounded-tremor-default bg-tremor-background ring-tremor-ring shadow-tremor-card dark:bg-dark-tremor-background dark:ring-dark-tremor-ring dark:shadow-dark-tremor-card border-tremor-brand dark:border-dark-tremor-brand p-6 mt-6">
+          <div className="bg-white text-cyan-950 tremor-Card-root relative w-full text-left ring-1 rounded-tremor-default bg-tremor-background ring-tremor-ring shadow-tremor-card dark:bg-dark-tremor-background dark:ring-dark-tremor-ring dark:shadow-dark-tremor-card border-tremor-brand dark:border-dark-tremor-brand p-6 mt-6">
             <div className="tremor-Table-root overflow-auto">
               <table className="tremor-Table-table w-full tabular-nums text-tremor-default text-tremor-content dark:text-dark-tremor-content">
                 <thead className="tremor-TableHead-root text-left text-tremor-content dark:text-dark-tremor-content">
@@ -69,11 +69,11 @@ const Orders = async () => {
             <table className="tremor-Table-table w-full tabular-nums text-tremor-default text-tremor-content dark:text-dark-tremor-content">
               <tr className="tremor-TableRow-row">
                 <td className="tremor-TableCell-root align-middle whitespace-nowrap tabular-nums text-left p-4">
-                  Time Completed: {new Date(orderDetail.time).toUTCString()}
+                  <b>Time Completed:</b> {new Date(orderDetail.time).toUTCString()}
                 </td>
                 <td className="tremor-TableCell-root align-middle whitespace-nowrap tabular-nums text-left p-4"></td>
                 <td className="tremor-TableCell-root align-middle whitespace-nowrap tabular-nums text-left p-4">
-                  Total Price: {orderDetail.totalPrice}
+                  <b>Total Price: </b> {orderDetail.totalPrice}
                 </td>
               </tr>
             </table>

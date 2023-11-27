@@ -7,10 +7,10 @@ const Products = async () => {
 
   return (
     <>
-      <div className="mt-3 text-3xl text-center pl-5 pr-5 grid bg-stone-500 py-5 bg-clip-border rounded-xl">
+      <div className="mt-3 text-3xl text-center pl-5 pr-5 grid bg-yellow-300 ring-1 ring-black py-5 bg-clip-border rounded-xl">
         Products
       </div>
-      <div className="bg-gray-300 text-cyan-950 tremor-Card-root relative w-full text-left ring-1 rounded-tremor-default bg-tremor-background ring-tremor-ring shadow-tremor-card dark:bg-dark-tremor-background dark:ring-dark-tremor-ring dark:shadow-dark-tremor-card border-tremor-brand dark:border-dark-tremor-brand p-6 mt-6">
+      <div className="bg-white text-cyan-950 tremor-Card-root relative w-full text-left ring-1 rounded-tremor-default bg-tremor-background ring-tremor-ring shadow-tremor-card dark:bg-dark-tremor-background dark:ring-dark-tremor-ring dark:shadow-dark-tremor-card border-tremor-brand dark:border-dark-tremor-brand p-6 mt-6">
         <div className="tremor-Table-root overflow-auto">
           <table className="tremor-Table-table w-full tabular-nums text-tremor-default text-tremor-content dark:text-dark-tremor-content">
             <thead className="tremor-TableHead-root text-left text-tremor-content dark:text-dark-tremor-content">

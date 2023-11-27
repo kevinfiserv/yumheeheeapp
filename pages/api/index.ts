@@ -51,12 +51,6 @@ interface Product {
   price: number;
 }
 
-export async function getTestUsers() {
-  const res = await fetch("http://jsonplaceholder.typicode.com/users");
-  const users: User[] = await res.json();
-  return users;
-}
-
 export class ProductApi {
   static async getAllProducts() {
     const res = await fetch(`${BACKEND_API}/products`);
