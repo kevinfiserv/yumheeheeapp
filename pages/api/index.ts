@@ -53,7 +53,11 @@ interface Product {
 
 export class ProductApi {
   static async getAllProducts() {
-    const res = await fetch(`${BACKEND_API}/products`);
+    const res = await fetch(`${BACKEND_API}/products`, {
+      next: {
+        revalidate: 10,
+      },
+    });
     const Products: Product[] = await res.json();
     return Products;
   }
@@ -61,6 +65,16 @@ export class ProductApi {
     const res = await fetch(`${BACKEND_API}/product/${id}`);
     const Product: Product = await res.json();
     return Product;
+  }
+
+  static updateProduct(body: Product) {
+    fetch(`${BACKEND_API}/updateProduct`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    })
   }
 }
 
