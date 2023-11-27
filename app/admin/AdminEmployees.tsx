@@ -1,10 +1,11 @@
 import React from "react";
-import { CustomerApi } from "@/pages/api";
+import { EmployeeApi } from "@/pages/api";
 import Admin from "./page";
-import CustomersForm from "../adminCustomers/CustomersForm";
+import EmployeeForms from "../adminEmployees/EmployeeForms";
 
-const AdminCustomers = async () => {
-  const customers = await CustomerApi.getAllCustomers();
+
+const AdminEmployees = async () => {
+  const employees = await EmployeeApi.getAllEmployees();
 
   return (
     <>
@@ -16,23 +17,21 @@ const AdminCustomers = async () => {
             <thead className="tremor-TableHead-root text-left text-tremor-content dark:text-dark-tremor-content">
               <tr className="tremor-TableRow-row">
                 <th className="tremor-TableHeaderCell-root sticky whitespace-nowrap text-left font-semibold text-tremor-content dark:text-dark-tremor-content top-0 px-4 py-3.5">
+                  Employee ID
+                </th>
+                <th className="tremor-TableHeaderCell-root sticky whitespace-nowrap text-left font-semibold text-tremor-content dark:text-dark-tremor-content top-0 px-4 py-3.5">
                   Name
                 </th>
                 <th className="tremor-TableHeaderCell-root sticky whitespace-nowrap text-left font-semibold text-tremor-content dark:text-dark-tremor-content top-0 px-4 py-3.5">
-                  Phone
+                  Active Status
                 </th>
-                <th className="tremor-TableHeaderCell-root sticky whitespace-nowrap text-left font-semibold text-tremor-content dark:text-dark-tremor-content top-0 px-4 py-3.5">
-                  Address
-                </th>
-                <th className="tremor-TableHeaderCell-root sticky whitespace-nowrap text-left font-semibold text-tremor-content dark:text-dark-tremor-content top-0 px-4 py-3.5">
-                  Zip Code
-                </th>
+
               </tr>
             </thead>
             <tbody className="tremor-TableBody-root align-top overflow-x-auto divide-y divide-tremor-border dark:divide-dark-tremor-border">
-              {customers.map((customer) => (
-                <tr key={customer.phoneNo} className="tremor-TableRow-row">
-                  <CustomersForm customer={customer} />
+              {employees.map((employee) => (
+                <tr key={employee.employeeId} className="tremor-TableRow-row">
+                  <EmployeeForms employee={employee} />
                 </tr>
               ))}
             </tbody>
@@ -40,7 +39,7 @@ const AdminCustomers = async () => {
         </div>
       </div>
     </>
-  );
-};
+      );
+    };
 
-export default AdminCustomers;
+export default AdminEmployees;

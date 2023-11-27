@@ -80,7 +80,11 @@ export class ProductApi {
 
 export class EmployeeApi {
   static async getAllEmployees() {
-    const res = await fetch(`${BACKEND_API}/employee`);
+    const res = await fetch(`${BACKEND_API}/employee`, {
+    next: {
+      revalidate: 10,
+    }
+  });
     const Employees: Employee[] = await res.json();
     return Employees;
   }
@@ -89,6 +93,16 @@ export class EmployeeApi {
     const res = await fetch(`${BACKEND_API}/getEmployee/${id}`);
     const Employee: Employee = await res.json();
     return Employee;
+  }
+
+  static updateEmployee(body: Employee) {
+    fetch(`${BACKEND_API}/updateEmployee`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    })
   }
 }
 
@@ -104,6 +118,16 @@ export class OrderListApi {
     const OrderList: OrderList = await res.json();
     return OrderList;
   }
+
+  static updateOrderList(body: OrderList) {
+    fetch(`${BACKEND_API}/updateOrderList`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    })
+  }
 }
 export class OrderDetailApi {
   static async getAllOrderDetails() {
@@ -117,11 +141,26 @@ export class OrderDetailApi {
     const OrderDetails: OrderDetails = await res.json();
     return OrderDetails;
   }
+
+  static updateOrderDetails(body: OrderDetails) {
+    fetch(`${BACKEND_API}/updateOrderDetails`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    })
+  }
 }
 
 export class CustomerApi {
+  
   static async getAllCustomers() {
-    const res = await fetch(`${BACKEND_API}/customers`);
+    const res = await fetch(`${BACKEND_API}/customers`, {
+          next: {
+        revalidate: 10,
+      }
+    });
     const Customers: Customers[] = await res.json();
     return Customers;
   }
@@ -131,6 +170,17 @@ export class CustomerApi {
     const Customers: Customers = await res.json();
     return Customers;
   }
+
+  static updateCustomer(body: Customers) {
+    fetch(`${BACKEND_API}/updateCustomer`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    })
+  }
+
 }
 export class CustomerOrderApi {
   static async getAllCustomerOrders() {
@@ -143,7 +193,7 @@ export class CustomerOrderApi {
     const res = await fetch(`${BACKEND_API}/getCustomerOrder/${id}`);
     const CustomerOrders: CustomerOrders = await res.json();
     return CustomerOrders;
-  }
+    }
 }
 
 // export async function kevin(request: Request) {

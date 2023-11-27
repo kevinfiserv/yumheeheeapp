@@ -4,40 +4,47 @@ import { Button, Tab } from "@nextui-org/react";
 import { table } from "console";
 import React, { useState } from "react";
 
-import { ProductApi } from "@/pages/api";
+import { CustomerApi } from "@/pages/api";
 
-interface Product {
-  productId: number;
-  name: string;
-  price: number;
-}
+interface Customers {
+    phoneNo: string;
+    name: string;
+    address: string;
+    zipCode: number;
+  }
 
-const ProductsForm = ({ product }: { product: Product }) => {
+const CustomersForm = ({ customer }: { customer: Customers }) => {
   let [editable, setEditable] = useState(true);
   // setEditable(false);
-  let [newName, setName] = useState(product.name);
-  let [newPrice, setPrice] = useState(product.price);
+
+  let [newName, setName] = useState(customer.name);
+  let [newAddress, setAddress] = useState(customer.address);
+  let [newZipCode, setZipCode] = useState(customer.zipCode);
 
   let handleNameChange = (e) => {
     setName(e.target.value);
   };
-  let handlePriceChange = (e) => {
-    setPrice(e.target.value);
+  let handleAddressChange = (e) => {
+    setAddress(e.target.value);
+  };
+  let handleZipCodeChange = (e) => {
+    setZipCode(e.target.value);
   };
 
   let handleUpdate = () => {
     setEditable(true);
-    ProductApi.updateProduct({
+    CustomerApi.updateCustomer({
+        phoneNo: customer.phoneNo,
       name: newName,
-      price: newPrice,
-      productId: product.productId,
+      address: newAddress,
+      zipCode: newZipCode,
     });
   };
 
   return (
     <>
       <td className="tremor-TableCell-root align-middle whitespace-nowrap tabular-nums text-left p-4">
-        {product.productId}
+        {customer.phoneNo}
       </td>
       <td className="tremor-TableCell-root align-middle whitespace-nowrap tabular-nums text-left p-4">
         <input
@@ -49,10 +56,17 @@ const ProductsForm = ({ product }: { product: Product }) => {
       </td>
       <td className="tremor-TableCell-root align-middle whitespace-nowrap tabular-nums text-left p-4">
         <input
-          type="number"
-          onChange={handlePriceChange}
-          value={newPrice}
-          placeholder={Number(product.price).toFixed(2)}
+          type="text"
+          onChange={handleAddressChange}
+          value={newAddress}
+          disabled={editable}
+        />
+      </td>
+      <td className="tremor-TableCell-root align-middle whitespace-nowrap tabular-nums text-left p-4">
+        <input
+          type="text"
+          onChange={handleZipCodeChange}
+          value={newZipCode}
           disabled={editable}
         />
       </td>
@@ -71,7 +85,7 @@ const ProductsForm = ({ product }: { product: Product }) => {
               Save
             </Button>
             <Button onClick={() => setEditable(!editable)} color="danger">
-              Cancel
+              x
             </Button>
           </>
         )}
@@ -80,4 +94,4 @@ const ProductsForm = ({ product }: { product: Product }) => {
   );
 };
 
-export default ProductsForm;
+export default CustomersForm;

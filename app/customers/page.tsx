@@ -6,7 +6,10 @@ const Customers = async () => {
   const customers = await CustomerApi.getAllCustomers();
   return (
     <>
-      <div className="mt-3 text-3xl text-center pl-5 pr-5 grid bg-orange-500 ring-1 ring-black py-5 bg-clip-border rounded-xl">
+    <div className="mt-3 text-3xl pl-5 pr-5 grid py-5 bg-clip-border rounded-xl">
+            _________________________________
+          </div>
+    <div className="mt-3 text-3xl text-center ring-1 ring-black grid bg-orange-500 py-5 bg-clip-border rounded-xl">
         Customer List
       </div>
       <div className="bg-white text-cyan-950 tremor-Card-root relative w-full text-left ring-2 rounded-tremor-default bg-tremor-background ring-tremor-ring shadow-tremor-card dark:bg-dark-tremor-background dark:ring-dark-tremor-ring dark:shadow-dark-tremor-card border-tremor-brand dark:border-dark-tremor-brand p-6 mt-6">
